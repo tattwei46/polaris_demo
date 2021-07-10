@@ -1,0 +1,23 @@
+successMessage: Must have metadata.labels.git
+failureMessage: Must have metadata.labels.git
+target: Container
+schema:
+  '$schema': http://json-schema.org/draft-07/schema
+  type: object
+  required:
+  - metadata
+  properties:
+    metadata:
+      type: object
+      required:
+      - labels
+      properties:
+        labels:
+          type: object
+          required:
+          - git
+          properties:
+            git:
+              type: string
+              not:
+                const: '' 
